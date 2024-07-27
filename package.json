@@ -2,7 +2,7 @@
   "name": "server.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "dist/server.js",
   "scripts": {
     "start": "nodemon server.ts",
     "build": "tsc",
