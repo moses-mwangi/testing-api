@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.ts",
     "build": "tsc",
-    "start:prod": "node dist/server.js",
+    "start:prod": "node server.ts",
     "vercel-build": "echo hello"
   },
   "author": "",

@@ -1,6 +1,4 @@
 import express from "express";
-import morgan from "morgan";
-import mimeTypes from "mime-types";
 import cors from "cors";
 import cookiParser from "cookie-parser";
 import userRouter from "./routes/users";
@@ -39,6 +37,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/users", userRouter);
+app.get("/api/users", userRouter);
 
 export default app;
