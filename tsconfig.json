@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types", "./types"]
+  },
+  "include": [
+    "./**/*.ts",
+    "app.ts",
+    "server.ts",
+    "dev-data/data/import-data.js"
+  ],
+  "exclude": ["node_modules"]
+}
