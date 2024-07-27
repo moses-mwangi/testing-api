@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon server.ts",
     "build": "tsc",
-    "start:prod": "node server.ts",
-    "vercel-build": "echo hello"
+    "start:prod": "node server.ts"
   },
   "author": "",
   "license": "ISC",
