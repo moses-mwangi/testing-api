@@ -2,11 +2,12 @@
   "name": "server.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/server.js",
+  "main": "server.ts",
   "scripts": {
     "start": "nodemon server.ts",
     "build": "tsc",
-    "start:prod": "node dist/server.js"
+    "start:prod": "node dist/server.js",
+    "vercel-build": "echo hello"
   },
   "author": "",
   "license": "ISC",
