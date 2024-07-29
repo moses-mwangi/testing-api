@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookiParser from "cookie-parser";
 import userRouter from "./routes/users";
-import Order from "./models/orderModel";
+import Order from "./routes/order";
 
 const app = express();
 
@@ -40,13 +40,6 @@ app.use((req, res, next) => {
 
 app.use("/api/users", userRouter);
 
-app.use("/api/order", async (req, res, next) => {
-  const order = await Order.find();
-
-  if (!order)
-    return res.status(200).json({ status: "success", data: { data: "no" } });
-
-  res.status(200).json({ status: "success", data: { data: order } });
-});
+app.use("/api/order", Order);
 
 export default app;
