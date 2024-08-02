@@ -16,9 +16,9 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const users_1 = __importDefault(require("./routes/users"));
-const orderModel_1 = __importDefault(require("./models/orderModel"));
 // import Order from "./routes/order";
 const tour_1 = __importDefault(require("./routes/tour"));
+const restaurantModel_1 = __importDefault(require("./models/restaurantModel"));
 const app = (0, express_1.default)();
 const allowedOrigins = [
     "http://localhost:3000",
@@ -48,10 +48,10 @@ app.use((req, res, next) => {
 app.use("/api/users", users_1.default);
 app.use("/api/tours", tour_1.default);
 // app.use("/api/orders", Order);
-app.get("/api/orders", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/api/restaurants", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Received request for /api/orders");
     try {
-        const orders = yield orderModel_1.default.find();
+        const orders = yield restaurantModel_1.default.find();
         if (!orders.length) {
             console.log("No orders found");
             return res.status(200).json({ status: "success", data: { data: "no" } });
