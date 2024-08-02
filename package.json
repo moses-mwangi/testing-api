@@ -2,11 +2,11 @@
   "name": "server.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "api/index.ts",
   "scripts": {
-    "start": "nodemon server.ts",
+    "start": "nodemon api/index.ts",
     "build": "tsc",
-    "start:prod": "node server.ts"
+    "start:prod": "node api/index.ts"
   },
   "author": "",
   "license": "ISC",
