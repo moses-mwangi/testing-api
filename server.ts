@@ -15,14 +15,14 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-const db =
-  "mongodb+srv://mosesmwangime:4mn2TqRhReEkVL0T@deliverycluster0.i6awu9f.mongodb.net/deliverFood?retryWrites=true&w=majority&appName=DeliveryCluster0";
+// const db =
+//   "mongodb+srv://mosesmwangime:4mn2TqRhReEkVL0T@deliverycluster0.i6awu9f.mongodb.net/deliverFood?retryWrites=true&w=majority&appName=DeliveryCluster0";
 
 // const db =
 //   "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
 
-// const db =
-//   "mongodb+srv://mosesmwangime:9SPqAj4JOaXBxDrI@cluster0.sqjq7km.mongodb.net/natours?retryWrites=true&w=majority&appName=Cluster0";
+const db =
+  "mongodb+srv://mosesmwangime:9SPqAj4JOaXBxDrI@cluster0.sqjq7km.mongodb.net/natours?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(db)
