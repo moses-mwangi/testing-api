@@ -16,7 +16,7 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const users_1 = __importDefault(require("./routes/users"));
-// import Order from "./routes/order";
+const order_1 = __importDefault(require("./routes/order"));
 const tour_1 = __importDefault(require("./routes/tour"));
 const restaurantModel_1 = __importDefault(require("./models/restaurantModel"));
 const app = (0, express_1.default)();
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 });
 app.use("/api/users", users_1.default);
 app.use("/api/tours", tour_1.default);
-// app.use("/api/orders", Order);
+app.use("/api/orders", order_1.default);
 app.get("/api/restaurants", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Received request for /api/orders");
     try {
@@ -64,9 +64,4 @@ app.get("/api/restaurants", (req, res) => __awaiter(void 0, void 0, void 0, func
         res.status(500).json({ status: "error", message: "Server Error" });
     }
 }));
-// Error handling middleware
-// app.use((err, req, res, next) => {
-//   console.error('Unhandled error:', err);
-//   res.status(500).json({ status: 'error', message: 'Server Error' });
-// });
 exports.default = app;

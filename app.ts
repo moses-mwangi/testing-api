@@ -3,7 +3,7 @@ import cors from "cors";
 import cookiParser from "cookie-parser";
 import userRouter from "./routes/users";
 import Order from "./models/orderModel";
-// import Order from "./routes/order";
+import orderRoutes from "./routes/order";
 import tour from "./routes/tour";
 import Restaurant from "./models/restaurantModel";
 
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use("/api/users", userRouter);
 app.use("/api/tours", tour);
 
-// app.use("/api/orders", Order);
+app.use("/api/orders", orderRoutes);
 
 app.get("/api/restaurants", async (req, res) => {
   console.log("Received request for /api/orders");
@@ -63,11 +63,5 @@ app.get("/api/restaurants", async (req, res) => {
     res.status(500).json({ status: "error", message: "Server Error" });
   }
 });
-
-// Error handling middleware
-// app.use((err, req, res, next) => {
-//   console.error('Unhandled error:', err);
-//   res.status(500).json({ status: 'error', message: 'Server Error' });
-// });
 
 export default app;

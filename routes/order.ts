@@ -13,5 +13,3 @@ router.route("/").get(async (req, res, next) => {
 });
 
 export default router;
-//restaurants
-//users

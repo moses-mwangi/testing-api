@@ -22,5 +22,3 @@ router.route("/").get((req, res, next) => __awaiter(void 0, void 0, void 0, func
     res.status(200).json({ status: "success", data: { data: order } });
 }));
 exports.default = router;
-//restaurants
-//users
