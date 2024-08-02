@@ -15,11 +15,11 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// const db =
-//   "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
-
 const db =
-  "mongodb+srv://mosesmwangime:9SPqAj4JOaXBxDrI@cluster0.sqjq7km.mongodb.net/natours?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
+
+// const db =
+//   "mongodb+srv://mosesmwangime:9SPqAj4JOaXBxDrI@cluster0.sqjq7km.mongodb.net/natours?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(db)
@@ -29,7 +29,7 @@ mongoose
   .then(() => console.log("Database connected successfully"))
   .catch((err) => console.error("Database connection error:", err));
 
-const port: number = Number(process.env.PORT) || 3005;
+const port: number = Number(process.env.PORT) || 3007;
 const server = app.listen(3005, "127.0.0.1", () => {
   console.log(`listening to port 3005`);
 });
