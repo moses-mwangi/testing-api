@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import cookiParser from "cookie-parser";
 import userRouter from "./routes/users";
-import Order from "./routes/order";
+import Order from "./models/orderModel";
+// import Order from "./routes/order";
 
 const app = express();
 
@@ -40,6 +41,30 @@ app.use((req, res, next) => {
 
 app.use("/api/users", userRouter);
 
-app.use("/api/orders", Order);
+// app.use("/api/orders", Order);
+
+app.get("/api/orders", async (req, res) => {
+  console.log("Received request for /api/orders");
+
+  try {
+    const orders = await Order.find();
+    if (!orders.length) {
+      console.log("No orders found");
+      return res.status(200).json({ status: "success", data: { data: "no" } });
+    }
+
+    console.log("Orders retrieved successfully");
+    res.status(200).json({ status: "success", data: { data: orders } });
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    res.status(500).json({ status: "error", message: "Server Error" });
+  }
+});
+
+// Error handling middleware
+// app.use((err, req, res, next) => {
+//   console.error('Unhandled error:', err);
+//   res.status(500).json({ status: 'error', message: 'Server Error' });
+// });
 
 export default app;
