@@ -13,11 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const userModel_1 = __importDefault(require("../models/userModel"));
 const router = express_1.default.Router();
 router.route("/").get((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = yield userModel_1.default.find();
     res.status(200).json({
         status: "success",
-        data: "moses mwangi",
+        data: user,
     });
 }));
 exports.default = router;
