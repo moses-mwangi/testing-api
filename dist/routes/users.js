@@ -15,9 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 router.route("/").get((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    // const order = await Order.find();
-    // if (order)
-    //   return res.status(200).json({ status: "success", data: { data: "no" } });
     res.status(200).json({
         status: "success",
         data: "moses mwangi",

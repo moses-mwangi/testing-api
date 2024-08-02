@@ -17,11 +17,14 @@ process.on("uncaughtException", (err) => {
     process.exit(1);
 });
 const db = "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
-mongoose_1.default.connect(db).then(() => {
+mongoose_1.default
+    .connect(db)
+    .then(() => {
     console.log("Database has succefully connneccted");
-});
-// .catch((err: Error) => console.error(err, "moess"));
-// const port: number = Number(process.env.PORT) || 3005;
+})
+    .then(() => console.log("Database connected successfully"))
+    .catch((err) => console.error("Database connection error:", err));
+const port = Number(process.env.PORT) || 3005;
 const server = app_1.default.listen(3005, "127.0.0.1", () => {
     console.log(`listening to port 3005`);
 });
