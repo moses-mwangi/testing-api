@@ -4,6 +4,7 @@ import cookiParser from "cookie-parser";
 import userRouter from "./routes/users";
 import Order from "./models/orderModel";
 // import Order from "./routes/order";
+import tour from "./routes/tour";
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/users", userRouter);
+app.use("/api/tours", tour);
 
 // app.use("/api/orders", Order);
 

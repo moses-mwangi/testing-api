@@ -18,6 +18,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const users_1 = __importDefault(require("./routes/users"));
 const orderModel_1 = __importDefault(require("./models/orderModel"));
 // import Order from "./routes/order";
+const tour_1 = __importDefault(require("./routes/tour"));
 const app = (0, express_1.default)();
 const allowedOrigins = [
     "http://localhost:3000",
@@ -45,6 +46,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use("/api/users", users_1.default);
+app.use("/api/tours", tour_1.default);
 // app.use("/api/orders", Order);
 app.get("/api/orders", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Received request for /api/orders");
