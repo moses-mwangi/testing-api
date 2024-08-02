@@ -40,6 +40,6 @@ app.use((req, res, next) => {
 
 app.use("/api/users", userRouter);
 
-app.use("/api/order", Order);
+app.use("/api/orders", Order);
 
 export default app;
