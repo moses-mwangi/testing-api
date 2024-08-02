@@ -16,7 +16,10 @@ process.on("uncaughtException", (err) => {
 });
 
 const db =
-  "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
+  "mongodb+srv://mosesmwangime:4mn2TqRhReEkVL0T@deliverycluster0.i6awu9f.mongodb.net/deliverFood?retryWrites=true&w=majority&appName=DeliveryCluster0";
+
+// const db =
+//   "mongodb+srv://mosesmwangime:4Owf3JAY8YpVbT0y@fooddelivercluster.q3ihtsr.mongodb.net/delivery?retryWrites=true&w=majority&appName=FoodDeliverCluster";
 
 // const db =
 //   "mongodb+srv://mosesmwangime:9SPqAj4JOaXBxDrI@cluster0.sqjq7km.mongodb.net/natours?retryWrites=true&w=majority&appName=Cluster0";
@@ -33,3 +36,5 @@ const port: number = Number(process.env.PORT) || 3007;
 const server = app.listen(3005, "127.0.0.1", () => {
   console.log(`listening to port 3005`);
 });
+
+///pass=4mn2TqRhReEkVL0T
