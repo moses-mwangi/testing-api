@@ -2,10 +2,11 @@
   "name": "server.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "dist/server.js",
   "scripts": {
     "start": "nodemon server.ts",
-    "start:prod": "node server.ts"
+    "build": "tsc",
+    "start:prod": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
