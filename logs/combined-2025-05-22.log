@@ -1,0 +1,141 @@
+2025-05-22 10:26:47 [info]: Webhook charge.success Received
+2025-05-22 10:26:47 [info]: Received Paystack webhook event: charge.success
+2025-05-22 10:26:47 [info]: Handling successful charge for order_1_1747898675994
+2025-05-22 10:26:47 [error]: Payment record not found for reference: order_1_1747898675994
+2025-05-22 11:23:49 [info]: Payment Initiated
+2025-05-22 11:23:49 [info]: Initializing payment for order 1
+2025-05-22 11:23:50 [info]: Payment Successful
+2025-05-22 11:24:03 [info]: Webhook charge.success Received
+2025-05-22 11:24:03 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 11:24:03 [info]: Handling successful charge for order_1_1747902194026
+2025-05-22 11:24:03 [error]: Payment record not found for reference: order_1_1747902194026
+2025-05-22 11:33:51 [info]: Payment Initiated
+2025-05-22 11:33:52 [info]: Initializing payment for order 1
+2025-05-22 11:33:55 [info]: Payment Successful
+2025-05-22 11:34:21 [info]: Payment Initiated
+2025-05-22 11:34:21 [info]: Initializing payment for order 1
+2025-05-22 11:34:22 [info]: Payment Successful
+2025-05-22 11:36:36 [info]: Payment Initiated
+2025-05-22 11:36:36 [info]: Initializing payment for order 1
+2025-05-22 11:36:37 [info]: Payment Successful
+2025-05-22 11:40:55 [info]: Webhook charge.success Received
+2025-05-22 11:40:55 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 11:40:55 [info]: Handling successful charge for order_1_1747903238004
+2025-05-22 11:40:55 [error]: Payment record not found for reference: order_1_1747903238004
+2025-05-22 11:50:18 [info]: Payment Initiated
+2025-05-22 11:50:18 [info]: Initializing payment for order 1
+2025-05-22 11:50:19 [info]: Payment Successful
+2025-05-22 11:55:29 [info]: Payment Initiated
+2025-05-22 11:55:29 [info]: Initializing payment for order 1
+2025-05-22 11:55:29 [info]: Payment Successful
+2025-05-22 11:56:41 [info]: Payment Initiated
+2025-05-22 11:56:41 [info]: Initializing payment for order 1
+2025-05-22 11:56:42 [info]: Payment Successful
+2025-05-22 11:58:24 [info]: Payment Initiated
+2025-05-22 11:58:24 [info]: Initializing payment for order 1
+2025-05-22 11:58:25 [info]: Payment Successful
+2025-05-22 11:59:06 [info]: Webhook charge.success Received
+2025-05-22 11:59:06 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 11:59:06 [info]: Handling successful charge for order_1_1747904332133
+2025-05-22 11:59:06 [error]: Payment record not found for reference: order_1_1747904332133
+2025-05-22 12:05:47 [info]: Payment Initiated
+2025-05-22 12:05:47 [info]: Initializing payment for order 1
+2025-05-22 12:05:48 [info]: Payment Successful
+2025-05-22 12:07:29 [info]: Payment Initiated
+2025-05-22 12:07:29 [info]: Initializing payment for order 2
+2025-05-22 12:07:35 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:137:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-22 12:07:37 [info]: Webhook charge.success Received
+2025-05-22 12:07:37 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 12:07:37 [info]: Handling successful charge for order_2_1747904838728
+2025-05-22 12:07:37 [error]: Amount mismatch for payment order_2_1747904838728
+2025-05-22 12:07:37 [error]: Suspicious payment detected: order_2_1747904838728
+2025-05-22 12:16:31 [info]: Payment Initiated
+2025-05-22 12:16:31 [info]: Initializing payment for order 2
+2025-05-22 12:16:32 [info]: Payment Successful
+2025-05-22 12:17:50 [info]: Payment Initiated
+2025-05-22 12:17:50 [info]: Initializing payment for order 2
+2025-05-22 12:17:51 [info]: Payment Successful
+2025-05-22 12:29:13 [info]: Payment Initiated
+2025-05-22 12:29:13 [info]: Initializing payment for order 2
+2025-05-22 12:29:15 [info]: Payment Successful
+2025-05-22 12:29:26 [info]: Webhook charge.success Received
+2025-05-22 12:29:26 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 12:29:26 [info]: Handling successful charge for order_2_1747906115499
+2025-05-22 12:29:26 [info]: Successfully processed payment for order 2
+2025-05-22 12:59:56 [info]: Payment Initiated
+2025-05-22 12:59:56 [error]: SequelizeValidationError: notNull Violation: Payment.userId cannot be null
+    at InstanceValidator._validate (/home/moses/E-commerce/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async InstanceValidator._validateAndRunHooks (/home/moses/E-commerce/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/home/moses/E-commerce/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async Payment.save (/home/moses/E-commerce/node_modules/sequelize/lib/model.js:2426:7)
+    at async Payment.create (/home/moses/E-commerce/node_modules/sequelize/lib/model.js:1362:12)
+    at async initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:85:29)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-22 13:02:34 [info]: Payment Initiated
+2025-05-22 13:02:35 [info]: Initializing payment for order 1
+2025-05-22 13:02:38 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:135:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-22 13:27:26 [info]: Payment Initiated
+2025-05-22 13:27:26 [info]: Initializing payment for order 1
+2025-05-22 13:27:27 [info]: Payment Successful
+2025-05-22 13:27:35 [info]: Webhook charge.success Received
+2025-05-22 13:27:35 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 13:27:35 [info]: Handling successful charge for order_1_1747909645464
+2025-05-22 13:27:35 [info]: Successfully processed payment for order 1
+2025-05-22 13:30:48 [info]: Payment Initiated
+2025-05-22 13:30:48 [info]: Initializing payment for order 2
+2025-05-22 13:30:48 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:135:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-22 13:32:10 [info]: Payment Initiated
+2025-05-22 13:32:10 [info]: Initializing payment for order 2
+2025-05-22 13:32:11 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:135:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-22 13:57:43 [info]: Webhook charge.success Received
+2025-05-22 13:57:43 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 13:57:43 [info]: Handling successful charge for order_2_1747911431876
+2025-05-22 13:57:43 [error]: Payment record not found for reference: order_2_1747911431876
+2025-05-22 14:17:13 [info]: Webhook charge.success Received
+2025-05-22 14:17:13 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 14:17:13 [info]: Handling successful charge for order_1_1747912522941
+2025-05-22 14:17:13 [error]: Payment record not found for reference: order_1_1747912522941
+2025-05-22 14:58:05 [info]: Webhook charge.success Received
+2025-05-22 14:58:05 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 14:58:05 [info]: Handling successful charge for order_new_1747914924625
+2025-05-22 14:58:05 [error]: Payment record not found for reference: order_new_1747914924625
+2025-05-22 15:06:19 [info]: Webhook charge.success Received
+2025-05-22 15:06:19 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 15:06:19 [info]: Handling successful charge for order_new_1747915563787
+2025-05-22 15:06:20 [error]: Payment record not found for reference: order_new_1747915563787
+2025-05-22 15:06:48 [info]: Webhook charge.success Received
+2025-05-22 15:06:48 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 15:06:48 [info]: Handling successful charge for order_new_1747915583174
+2025-05-22 15:06:48 [error]: Payment record not found for reference: order_new_1747915583174
+2025-05-22 15:07:52 [info]: Webhook charge.success Received
+2025-05-22 15:07:52 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 15:07:52 [info]: Handling successful charge for order_1_1747915628481
+2025-05-22 15:07:52 [error]: Payment record not found for reference: order_1_1747915628481
+2025-05-22 15:12:34 [info]: Payment Initiated
+2025-05-22 15:12:34 [info]: Initializing payment for order 1
+2025-05-22 15:12:35 [info]: Payment Successful
+2025-05-22 15:12:54 [info]: Webhook charge.success Received
+2025-05-22 15:12:54 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 15:12:54 [info]: Handling successful charge for order_1_1747915948623
+2025-05-22 15:12:54 [info]: Successfully processed payment for order 1
+2025-05-22 15:27:58 [info]: Webhook charge.success Received
+2025-05-22 15:27:58 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 15:27:58 [info]: Handling successful charge for order_1_1747916829966
+2025-05-22 15:27:58 [error]: Payment record not found for reference: order_1_1747916829966
+2025-05-22 18:12:16 [info]: Webhook charge.success Received
+2025-05-22 18:12:16 [info]: Received Paystack webhook event kk: charge.success
+2025-05-22 18:12:16 [info]: Handling successful charge for order_1_1747926719763
+2025-05-22 18:12:16 [error]: Payment record not found for reference: order_1_1747926719763

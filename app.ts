@@ -1,20 +1,46 @@
 import express from "express";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import session from "express-session";
 import cors from "cors";
-import cookiParser from "cookie-parser";
-import userRouter from "./routes/users";
-import Order from "./models/orderModel";
-import orderRoutes from "./routes/order";
-import tour from "./routes/tour";
-import Restaurant from "./models/restaurantModel";
+
+import { authRouter, userRouter } from "./modules/users";
+import { orderRouter } from "./modules/order";
+import { payments } from "./modules/payments";
+import { paystackPayments } from "./modules/payments";
+import { productRouter } from "./modules/product";
+import { categoryRouter } from "./modules/product";
+import { reviewRouter } from "./modules/reviews";
+import globalErrorHandler from "./shared/middleware/GlobalErrorHandler";
 
 const app = express();
 
+app.post(
+  "/api/payment/card/webhook",
+  bodyParser.raw({ type: "application/json" }),
+  (req, res, next) => {
+    (req as any).rawBody = req.body.toString("utf8");
+    next();
+  },
+  (req, res, next) => {
+    (req as any).skipBodyParsing = true;
+    next();
+  }
+);
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const allowedOrigins = [
   "http://localhost:3000",
-  "http://localhost:3002",
-  "https://food-delivery-bkrk.vercel.app",
-  "https://food-delivery-dasboard-pk5j.vercel.app",
-  "https://food-delivery-dasboard.vercel.app",
+  "https://api.publicapis.org/entries",
+  "http://localhost:3001",
+  "http://localhost:8000",
+  "https://e-commerce-e-commerce-brown.vercel.app/",
+  "https://e-commerce-e-commerce-brown.vercel.app",
 ];
 
 const corsOptions = {
@@ -22,46 +48,74 @@ const corsOptions = {
     origin: string | undefined,
     callback: (err: Error | null, allow?: boolean) => void
   ) => {
-    if (allowedOrigins.includes(origin!) || !origin) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.log("Blocked CORS request from origin:", origin);
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true,
+  credentials: true, // This allows cookies to be sent and received if needed
 };
 
 app.use(cors(corsOptions));
-
-app.use(express.json());
-app.use(cookiParser());
 
 app.use((req, res, next) => {
   console.log("Testing middleware");
   next();
 });
 
-app.use("/api/users", userRouter);
-app.use("/api/tours", tour);
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      secure: true,
+      // maxAge: 30 * 60 * 1000,
+      expires: new Date(Date.now() + 8 * 60 * 60 * 1000),
+      maxAge: 8 * 60 * 60 * 1000,
+    },
+  })
+);
 
-app.use("/api/orders", orderRoutes);
+// Initialize Passport
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-app.get("/api/restaurants", async (req, res) => {
-  console.log("Received request for /api/orders");
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
-  try {
-    const orders = await Restaurant.find();
-    if (!orders.length) {
-      console.log("No orders found");
-      return res.status(200).json({ status: "success", data: { data: "no" } });
-    }
+app.use("/api/product", productRouter);
+app.use("/api/category", categoryRouter);
+app.use("/api/order", orderRouter);
+app.use("/api/review", reviewRouter);
 
-    console.log("Orders retrieved successfully");
-    res.status(200).json({ status: "success", data: { data: orders } });
-  } catch (error) {
-    console.error("Error fetching orders:", error);
-    res.status(500).json({ status: "error", message: "Server Error" });
-  }
+app.use("/api/payment", payments);
+app.use("/api/payments", paystackPayments);
+
+app.use(globalErrorHandler);
+
+// app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+//   console.error(err.stack);
+//   res.status(500).json({ error: err.message });
+// });
+
+app.use((req, res, next) => {
+  res
+    .status(400)
+    .json({ msg: `Cannot find that route ${req.originalUrl} on this server` });
+
+  next();
 });
+
+// app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
+//   const statusCode = err.statusCode || 500;
+//   res.status(statusCode).json({
+//     status: "error",
+//     message: err.isOperational ? err.message : "Internal Server Error",
+//   });
+// });
 
 export default app;

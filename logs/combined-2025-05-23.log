@@ -1,0 +1,22 @@
+2025-05-23 09:04:14 [info]: Payment Initiated
+2025-05-23 09:04:14 [info]: Initializing payment for order 3
+2025-05-23 09:04:15 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:130:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-23 09:08:59 [info]: Payment Initiated
+2025-05-23 09:08:59 [info]: Initializing payment for order 3
+2025-05-23 09:09:01 [info]: Payment Successful
+2025-05-23 09:10:03 [info]: Payment Initiated
+2025-05-23 09:10:03 [info]: Initializing payment for order 3
+2025-05-23 09:10:03 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:130:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-23 09:10:17 [info]: Payment Initiated
+2025-05-23 09:10:17 [info]: Initializing payment for order 3
+2025-05-23 09:10:17 [info]: Payment Successful
+2025-05-23 09:10:41 [info]: Webhook charge.success Received
+2025-05-23 09:10:41 [info]: Received Paystack webhook event kk: charge.success
+2025-05-23 09:10:41 [info]: Handling successful charge for order_3_1747980539514
+2025-05-23 09:10:41 [info]: Successfully processed payment for order 3

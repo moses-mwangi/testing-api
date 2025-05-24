@@ -1,0 +1,8 @@
+2025-05-23 09:04:15 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:130:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
+2025-05-23 09:10:03 [error]: TypeError: Cannot read properties of undefined (reading 'reference')
+    at initializePayment (/home/moses/E-commerce/services/main_service/dist/modules/payments/controllers/PaystackPayments.js:130:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/moses/E-commerce/services/main_service/dist/modules/payments/routes/paymentPaystackRoutes.js:13:9
